@@ -1,4 +1,17 @@
-// Solis Heat — dossier builder for the Marina Solis open-world crime entry. The game itself lives in game/ (see README.md); this file packages it with the screenshots in screenshots/.
+// Solis Heat — dossier builder entrypoint (main.ts)
+// This script packages "Solis Heat", a complete open-world crime game set
+// in the fictional coastal city of Marina Solis, for the make.fun grader.
+// What it does: it copies the game sources from game/ plus the four
+// screenshots listed in shots.json into the output directory, then calls
+// the vendored builder to assemble dossier.json — a makefun/dossier/v1
+// document holding the sources, metadata and screenshots the judge reads.
+// Where things live: game/index.html is the playable page and game/src/*.js
+// holds the game's ES modules (city, world, physics, missions, rendering,
+// HUD, audio, input, shots). vendor/makefun-game.ts is the kit's dossier
+// runtime, kept byte-identical, and serve.ts serves the game locally.
+// The game itself is hand-written vanilla JavaScript with zero
+// dependencies — no build step, no bundler, no network requests — and it
+// runs fully offline in any modern desktop browser.
 // A working gta6-01 entry (Node 22, standard library only): the game is this directory's
 // game/ folder, plain static files a desktop browser loads offline (game/index.html and its ES
 // modules, no library and no network request), and the program hands it in. It copies game/ and
